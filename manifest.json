@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Privacy Policy Summarizer",
+    "version": "1.0",
+    "description": "Summarize privacy policies using GPT-4O Mini or Claude",
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["marked.min.js"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+}

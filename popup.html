@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Summarizer Extension</title>
+    <script src="marked.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <button id="summarize-tab">Summarize</button>
+        <button id="settings-tab"><i class="fas fa-cog"></i></button>
+    </div>
+
+    <div id="Summarize" class="tabcontent">
+        <textarea id="input-text" placeholder="Enter URL or text to summarize"></textarea>
+        <div class="bottom-controls">
+            <select id="model-select">
+                <option value="gpt-4o-mini">GPT-4o Mini</option>
+                <option value="claude-3-sonnet-20240229">Claude 3 Sonnet</option>
+            </select>
+            <button id="summarize-btn">Summarize</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <div id="Settings" class="tabcontent" style="display: none;">
+        <label for="openai-api-key">OpenAI API Key:</label>
+        <input type="password" id="openai-api-key">
+        <label for="anthropic-api-key">Anthropic API Key:</label>
+        <input type="password" id="anthropic-api-key">
+        <button id="save-settings-btn">Save Settings</button>
+    </div>
+
+    <div id="summary-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="summary-text"></div>
+        </div>
+    </div>
+
+    <div id="status"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
